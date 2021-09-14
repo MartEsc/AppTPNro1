@@ -4,12 +4,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewTitulo"
+        style="@style/mainTextFont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/stringTitulo" />
 
+    <EditText
+        android:id="@+id/editTextTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/stringPlaceholderTitulo"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
+
+    <TextView
+        android:id="@+id/textViewDescripcion"
+        style="@style/mainTextFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stringDescripcion" />
+
+    <EditText
+        android:id="@+id/editTextDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/stringPlaceholderDescripcion"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
+
+    <TextView
+        android:id="@+id/textViewCorreo"
+        style="@style/mainTextFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stringCorreo" />
+
+    <EditText
+        android:id="@+id/editTextCorreo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/stringPlaceholderCorreo"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
+
+    <TextView
+        android:id="@+id/textViewPrecio"
+        style="@style/mainTextFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stringPrecio" />
+
+    <EditText
+        android:id="@+id/editTextPrecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/stringPlaceholderPrecio"
+        android:inputType="numberDecimal"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
+
+    <TextView
+        android:id="@+id/textViewCategoria"
+        style="@style/mainTextFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stringCategoria" />
+
+    <Spinner
+        android:id="@+id/spinnerCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dropDownSelector="@color/spinnerSelector"
+        android:popupBackground="@color/backgroundColor"
+        android:prompt="@string/stringPromptCategoria"
+        android:spinnerMode="dialog" />
+
+    <Switch
+        android:id="@+id/switchEnvio"
+        style="@style/mainTextFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stringSwitchDescuento" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <TextView
+            android:id="@+id/textSeekbarLabelLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            style="@style/mainTextFont"
+            android:layout_alignParentLeft="true"
+            />
+        <SeekBar
+            android:id="@+id/seekbarDescuento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:min="0"
+            android:layout_toLeftOf="@+id/textSeekbarLabelRight"
+            android:layout_toRightOf="@+id/textSeekbarLabelLeft"
+            />
+        <TextView
+            android:id="@+id/textSeekbarLabelRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            style="@style/mainTextFont"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+
+    <CheckBox
+        android:id="@+id/checkboxRetiro"
+        style="@style/mainTextFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stringCheckRetiro" />
+
+    <TextView
+        android:id="@+id/textViewDireccion"
+        style="@style/mainTextFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stringDireccion" />
+
+    <EditText
+        android:id="@+id/editTextDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/stringPlaceholderDireccion"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
+
+    <CheckBox
+        android:id="@+id/checkboxTerminos"
+        style="@style/mainTextFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stringCheckTerminos" />
+
+    <Button
+        android:id="@+id/buttonPublicar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stringPublicar" />
 </LinearLayout>

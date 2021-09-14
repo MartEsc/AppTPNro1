@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">AppTPNro1</string>
+    <string name="stringTitulo">Titulo</string>
+    <string name="stringDescripcion">Descripción (Opcional)</string>
+    <string name="stringCorreo">Correo de Contacto</string>
+    <string name="stringPrecio">Precio</string>
+    <string name="stringCategoria">Categoría</string>
+    <string name="stringDireccion">Dirección de Retiro</string>
+    <string name="stringPlaceholderTitulo">Título</string>
+    <string name="stringPlaceholderDescripcion">Descripción del producto</string>
+    <string name="stringPlaceholderCorreo">Correo electrónico de contacto</string>
+    <string name="stringPlaceholderPrecio">Precio</string>
+    <string name="stringPlaceholderDireccion">Dirección de retiro</string>
+    <string name="stringPublicar">Publicar</string>
+    <string name="stringPromptCategoria">Seleccione una Categoría</string>
+    <string name="stringSwitchDescuento">Ofrecer descuento de envío</string>
+    <string name="stringCheckRetiro">Retiro en persona</string>
+    <string name="stringCheckTerminos">Acepto los términos y condiciones</string>
 </resources>

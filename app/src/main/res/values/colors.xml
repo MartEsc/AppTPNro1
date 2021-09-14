@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Aca comienzan los colores que agregamos -->
+    <color name="backgroundColor">#073642</color>
+    <color name="textColor">#93a1a1</color>
+    <color name="hintColor">#B6C3C3</color>
+    <color name="spinnerSelector">#0C6075</color>
 </resources>
