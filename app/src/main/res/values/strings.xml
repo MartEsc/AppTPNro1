@@ -16,4 +16,13 @@
     <string name="stringSwitchDescuento">Ofrecer descuento de envío</string>
     <string name="stringCheckRetiro">Retiro en persona</string>
     <string name="stringCheckTerminos">Acepto los términos y condiciones</string>
+    <string-array name="spinnerItems">
+        <item>INDUMENTARIA</item>
+        <item>ELECTRONICA</item>
+        <item>ENTRETENIMIENTO</item>
+        <item>JARDIN</item>
+        <item>VEHICULOS</item>
+        <item>JUGUETES</item>
+    </string-array>
+    <!---<string name="emailPattern">[a-zA-Z0-9._-]+@[a-z]{3}+\\.+[a-z]+</string>-->
 </resources>
