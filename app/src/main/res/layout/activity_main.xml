@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +13,6 @@
     android:background="@color/backgroundColor"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
     <TextView
         android:id="@+id/textViewTitulo"
         style="@style/mainTextFont"
@@ -81,28 +86,36 @@
         android:id="@+id/spinnerCategoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:dropDownSelector="@color/spinnerSelector"
-        android:popupBackground="@color/backgroundColor"
+        android:entries="@array/spinnerItems"
+        android:minHeight="48dp"
         android:prompt="@string/stringPromptCategoria"
         android:spinnerMode="dialog"
-        android:entries="@array/spinnerItems" />
+        android:theme="@style/mainTextFont"
+        android:popupTheme="@style/popUpSpinner"
+        android:backgroundTint="@color/amarilloBokita"
+        />
 
     <Switch
-        android:id="@+id/switchEnvio"
-        style="@style/mainTextFont"
+        android:id="@+id/switchDescuento"
+        style="@style/switchStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stringSwitchDescuento" />
+        android:text="@string/stringSwitchDescuento"
+        android:onClick="updateSwitchDescuento"
+        />
     <RelativeLayout
+        android:id="@+id/layoutDescuento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingRight="16dp"
+        android:visibility="gone"
+        >
         <TextView
             android:id="@+id/textSeekbarLabelLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
+            android:text="@string/stringLabelSeekLeft"
             style="@style/mainTextFont"
             android:layout_alignParentLeft="true"
             />
@@ -119,7 +132,7 @@
             android:id="@+id/textSeekbarLabelRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100"
+            android:text="@string/stringLabelSeekRight"
             style="@style/mainTextFont"
             android:layout_alignParentRight="true"
             />
@@ -128,7 +141,7 @@
 
     <CheckBox
         android:id="@+id/checkboxRetiro"
-        style="@style/mainTextFont"
+        style="@style/checkboxStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/stringCheckRetiro" />
@@ -150,16 +163,20 @@
 
     <CheckBox
         android:id="@+id/checkboxTerminos"
-        style="@style/mainTextFont"
+        style="@style/checkboxStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/stringCheckTerminos" />
+        android:text="@string/stringCheckTerminos"
+        android:onClick="updateButtonPublicarState"
+        />
 
     <Button
         android:id="@+id/buttonPublicar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="Enviar"
-        android:text="@string/stringPublicar" />
+        android:text="@string/stringPublicar"
+        />
 
 </LinearLayout>
+</ScrollView>

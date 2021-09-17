@@ -7,9 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="amarilloBokita">#FFD700</color>
+    <color name="amarilloBokitaDark">#FFFFFF</color>
     <!-- Aca comienzan los colores que agregamos -->
-    <color name="backgroundColor">#073642</color>
-    <color name="textColor">#93a1a1</color>
+    <color name="backgroundColor">#053F5E</color>
+    <color name="disabledButtonBackground">#9FA4A5</color>
+    <color name="enabledButtonBackground">#12596A</color>
+    <color name="disabledButtonText">#12596A</color>
+    <color name="enabledButtonText">#9FA4A5</color>
+    <color name="textColor">#D8D8D8</color>
     <color name="hintColor">#B6C3C3</color>
     <color name="spinnerSelector">#0C6075</color>
 </resources>
