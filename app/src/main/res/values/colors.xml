@@ -7,8 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="amarilloBokita">#FFD700</color>
-    <color name="amarilloBokitaDark">#FFFFFF</color>
+    <color name="yellowAccent">#FFD700</color>
     <!-- Aca comienzan los colores que agregamos -->
     <color name="backgroundColor">#053F5E</color>
     <color name="disabledButtonBackground">#9FA4A5</color>

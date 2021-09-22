@@ -4,179 +4,197 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+
     >
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-    <TextView
-        android:id="@+id/textViewTitulo"
-        style="@style/mainTextFont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringTitulo" />
-
-    <EditText
-        android:id="@+id/editTextTitulo"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/stringPlaceholderTitulo"
-        android:textColor="@color/textColor"
-        android:textColorHint="@color/hintColor" />
-
-    <TextView
-        android:id="@+id/textViewDescripcion"
-        style="@style/mainTextFont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringDescripcion" />
-
-    <EditText
-        android:id="@+id/editTextDescripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/stringPlaceholderDescripcion"
-        android:textColor="@color/textColor"
-        android:textColorHint="@color/hintColor" />
-
-    <TextView
-        android:id="@+id/textViewCorreo"
-        style="@style/mainTextFont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringCorreo" />
-
-    <EditText
-        android:id="@+id/editTextCorreo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/stringPlaceholderCorreo"
-        android:textColor="@color/textColor"
-        android:textColorHint="@color/hintColor"
-        android:inputType="textEmailAddress" />
-
-    <TextView
-        android:id="@+id/textViewPrecio"
-        style="@style/mainTextFont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringPrecio" />
-
-    <EditText
-        android:id="@+id/editTextPrecio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/stringPlaceholderPrecio"
-        android:inputType="numberDecimal"
-        android:textColor="@color/textColor"
-        android:textColorHint="@color/hintColor" />
-
-    <TextView
-        android:id="@+id/textViewCategoria"
-        style="@style/mainTextFont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringCategoria" />
-
-    <Spinner
-        android:id="@+id/spinnerCategoria"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/spinnerItems"
-        android:minHeight="48dp"
-        android:prompt="@string/stringPromptCategoria"
-        android:spinnerMode="dialog"
-        android:theme="@style/mainTextFont"
-        android:popupTheme="@style/popUpSpinner"
-        android:backgroundTint="@color/amarilloBokita"
-        />
-
-    <Switch
-        android:id="@+id/switchDescuento"
-        style="@style/switchStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/stringSwitchDescuento"
-        android:onClick="updateSwitchDescuento"
-        />
-    <RelativeLayout
-        android:id="@+id/layoutDescuento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
         >
         <TextView
-            android:id="@+id/textSeekbarLabelLeft"
+            android:id="@+id/textViewTitulo"
+            style="@style/mainTextFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stringLabelSeekLeft"
-            style="@style/mainTextFont"
-            android:layout_alignParentLeft="true"
-            />
+            android:text="@string/stringTitulo" />
 
-        <SeekBar
-            android:id="@+id/seekbarDescuento"
+        <EditText
+            android:id="@+id/editTextTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/textSeekbarLabelRight"
-            android:layout_toRightOf="@+id/textSeekbarLabelLeft"
-            android:max="100"
-            android:min="0" />
+            android:hint="@string/stringPlaceholderTitulo"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/hintColor" />
+
         <TextView
-            android:id="@+id/textSeekbarLabelRight"
+            android:id="@+id/textViewDescripcion"
+            style="@style/mainTextFont"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stringLabelSeekRight"
+            android:text="@string/stringDescripcion" />
+
+        <EditText
+            android:id="@+id/editTextDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/stringPlaceholderDescripcion"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/hintColor" />
+
+        <TextView
+            android:id="@+id/textViewCorreo"
             style="@style/mainTextFont"
-            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stringCorreo" />
+
+        <EditText
+            android:id="@+id/editTextCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/stringPlaceholderCorreo"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/hintColor"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/textViewPrecio"
+            style="@style/mainTextFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stringPrecio" />
+
+        <EditText
+            android:id="@+id/editTextPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/stringPlaceholderPrecio"
+            android:inputType="numberDecimal"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/hintColor" />
+
+        <TextView
+            android:id="@+id/textViewCategoria"
+            style="@style/mainTextFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stringCategoria" />
+
+        <Spinner
+            android:id="@+id/spinnerCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/spinnerItems"
+            android:minHeight="48dp"
+            android:prompt="@string/stringPromptCategoria"
+            android:spinnerMode="dialog"
+            android:theme="@style/mainTextFont"
+            android:popupTheme="@style/popUpSpinner"
+            android:backgroundTint="@color/yellowAccent"
             />
-    </RelativeLayout>
+
+        <Switch
+            android:id="@+id/switchDescuento"
+            style="@style/switchStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stringSwitchDescuento"
+            android:onClick="updateSwitchDescuento"
+            />
+        <RelativeLayout
+            android:id="@+id/layoutDescuento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="visible"
+            >
+            <TextView
+                android:id="@+id/textSeekbarLabelLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stringLabelSeekLeft"
+                style="@style/mainTextFont"
+                android:layout_alignParentLeft="true"
+                />
+
+            <SeekBar
+                android:id="@+id/seekbarDescuento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/textSeekbarLabelRight"
+                android:layout_toRightOf="@+id/textSeekbarLabelLeft"
+                android:max="100"
+                android:min="0" />
+            <TextView
+                android:id="@+id/textSeekbarLabelRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stringLabelSeekRight"
+                style="@style/mainTextFont"
+                android:layout_alignParentRight="true"
+                />
+            <TextView
+                android:id="@+id/textLabelPorcentajeDescuento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stringLabelPorcentajeDescuento"
+                style="@style/mainTextFont"
+                android:layout_below="@id/seekbarDescuento"
+                android:layout_centerHorizontal="true"
+                />
+        </RelativeLayout>
 
 
-    <CheckBox
-        android:id="@+id/checkboxRetiro"
-        style="@style/checkboxStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringCheckRetiro" />
+        <CheckBox
+            android:id="@+id/checkboxRetiro"
+            style="@style/checkboxStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stringCheckRetiro"
+            android:onClick="showDireccionRetiro"
+            />
+        <LinearLayout
+            android:id="@+id/layoutRetiro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/textViewDireccion"
+                style="@style/mainTextFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stringDireccion" />
 
-    <TextView
-        android:id="@+id/textViewDireccion"
-        style="@style/mainTextFont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringDireccion" />
+            <EditText
+                android:id="@+id/editTextDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/stringPlaceholderDireccion"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/hintColor" />
+        </LinearLayout>
+        <CheckBox
+            android:id="@+id/checkboxTerminos"
+            style="@style/checkboxStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stringCheckTerminos"
+            android:onClick="updateButtonPublicarState"
+            />
 
-    <EditText
-        android:id="@+id/editTextDireccion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/stringPlaceholderDireccion"
-        android:textColor="@color/textColor"
-        android:textColorHint="@color/hintColor" />
+        <Button
+            android:id="@+id/buttonPublicar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Enviar"
+            android:text="@string/stringPublicar"
+            />
 
-    <CheckBox
-        android:id="@+id/checkboxTerminos"
-        style="@style/checkboxStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringCheckTerminos"
-        android:onClick="updateButtonPublicarState"
-        />
-
-    <Button
-        android:id="@+id/buttonPublicar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="Enviar"
-        android:text="@string/stringPublicar"
-        />
-
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>

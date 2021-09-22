@@ -26,5 +26,6 @@
     </string-array>
     <string name="stringLabelSeekLeft">0</string>
     <string name="stringLabelSeekRight">100</string>
+    <string name="stringLabelPorcentajeDescuento">El descuento es de : 0%</string>
     <!---<string name="emailPattern">[a-zA-Z0-9._-]+@[a-z]{3}+\\.+[a-z]+</string>-->
 </resources>

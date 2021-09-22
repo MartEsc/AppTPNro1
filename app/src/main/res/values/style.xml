@@ -10,13 +10,13 @@
         <item name="android:background">@color/backgroundColor</item>
     </style>
     <style name="switchStyle">
-        <item name="android:trackTint">@color/amarilloBokitaDark</item>
+        <item name="android:trackTint">@color/white</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/mainTextSize</item>
     </style>
     <style name="checkboxStyle">
-        <item name="android:buttonTint">@color/amarilloBokita</item>
+        <item name="android:buttonTint">@color/yellowAccent</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/mainTextSize</item>
