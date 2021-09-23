@@ -12,6 +12,7 @@
     <string name="stringPlaceholderPrecio">Precio</string>
     <string name="stringPlaceholderDireccion">Dirección de retiro</string>
     <string name="stringPublicar">Publicar</string>
+    <string name="stringProbar">Probar Recycler View</string>
     <string name="stringPromptCategoria">Seleccione una Categoría</string>
     <string name="stringSwitchDescuento">Ofrecer descuento de envío</string>
     <string name="stringCheckRetiro">Retiro en persona</string>

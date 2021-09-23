@@ -194,5 +194,12 @@
             android:onClick="Enviar"
             android:text="@string/stringPublicar"
             />
+        <Button
+            android:id="@+id/buttonPublicar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="Enviar"
+            android:text="@string/stringProbar"
+            />
     </LinearLayout>
 </ScrollView>

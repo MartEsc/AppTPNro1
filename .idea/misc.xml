@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Martin/StudioProjects/AppTPNro1/app/src/main/res/layout/activity_lista_categorias.xml" value="0.1" />
-        <entry key="..\:/Users/Martin/StudioProjects/AppTPNro1/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Joaco/git/AppTPNro1/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Joaco/git/AppTPNro1/app/src/main/res/layout/activity_paginados.xml" value="0.184375" />
+        <entry key="..\:/Users/Joaco/git/AppTPNro1/app/src/main/res/layout/fila.xml" value="0.22" />
+        <entry key="..\:/Users/Joaco/git/AppTPNro1/app/src/main/res/layout/fila_cat.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/Joaco/git/AppTPNro1/app/src/main/res/layout/item_header.xml" value="0.1" />
+        <entry key="..\:/Users/Joaco/git/AppTPNro1/app/src/main/res/layout/rowlayout.xml" value="0.1703125" />
+        <entry key="..\:/Users/Martin/AndroidStudioProjects/AppTPNro1/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Windows/source/repos/TP-AppMoviles/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
   </component>

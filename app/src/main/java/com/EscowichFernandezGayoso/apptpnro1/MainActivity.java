@@ -1,5 +1,6 @@
 package com.EscowichFernandezGayoso.apptpnro1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar Cantidad_descuento;
     private RelativeLayout layoutDescuento;
     private LinearLayout layoutRetiro;
-    private Button buttonPublicar;
+    private Button buttonPublicar,buttonPublicar1;
     private String emailPattern= "[a-zA-Z0-9._-]+@[a-z]{3,}+\\.+[a-z]+";
     private String validador= "[a-zA-Z0-9,. ]+";
 
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         Descripcion=(EditText) findViewById(R.id.editTextDescripcion);
         layoutDescuento=(RelativeLayout) findViewById(R.id.layoutDescuento);
         buttonPublicar = (Button) findViewById(R.id.buttonPublicar);
+        buttonPublicar1 = (Button) findViewById(R.id.buttonPublicar1);
 
         Descuento.setChecked(false);
         layoutDescuento.setVisibility(View.GONE);
@@ -72,7 +74,18 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        buttonPublicar1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent buttonPublicar1 = new Intent(MainActivity.this, paginados.class);
+                startActivity(buttonPublicar1);
+            }
+        });
+
+
     }
+
+
 
     public void updateSwitchDescuento(View V){
             if(Descuento.isChecked()){
@@ -82,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 layoutDescuento.setVisibility(View.GONE);
             }
     }
+
 
     public void showDireccionRetiro(View V){
         if(Retiro_en_persona.isChecked()){
