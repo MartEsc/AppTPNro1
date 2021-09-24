@@ -50,6 +50,18 @@ public class paginados extends AppCompatActivity implements CategoryViewHolder.c
         categorias.add("Entradas para Eventos");
         categorias.add("Herramientas");
         categorias.add("Hogar, Muebles y Jardín");
+        categorias.add("Industrias y Oficinas");
+        categorias.add("Inmuebles");
+        categorias.add("Instrumentos Musicales");
+        categorias.add("Joyas y Relojes");
+        categorias.add("Juegos y Juguetes");
+        categorias.add("Libros, Revistas y Comics");
+        categorias.add("Música, Películas y Series");
+        categorias.add("Ropa y Accesorios");
+        categorias.add("Salud y Equipamiento Médico");
+        categorias.add("Servicios");
+        categorias.add("Souvenirs, Cotillón y Fiestas");
+        categorias.add("Otras categorías");
         adapter.notifyDataSetChanged();
     }
     @Override
