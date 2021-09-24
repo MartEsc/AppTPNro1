@@ -18,18 +18,20 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
     private List<String> mData;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
+    private categoriaClickListener _categoriaListener;
 
     // data is passed into the constructor
-    CategoryViewHolder(Context context, List<String> data) {
+    CategoryViewHolder(Context context, List<String> data, categoriaClickListener categoriaListener) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
+        this._categoriaListener=categoriaListener;
     }
 
     // inflates the row layout from xml when needed
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.fila_cat, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, _categoriaListener);
     }
 
     // binds the data to the TextView in each row
@@ -49,26 +51,30 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView myTextView;
-
-        ViewHolder(View itemView) {
+        categoriaClickListener categoriaListener;
+        public ViewHolder(View itemView, categoriaClickListener categoriaListener) {
             super(itemView);
             myTextView = itemView.findViewById(R.id.rowName);
-            itemView.setOnClickListener(new View.OnClickListener(){
+            this.categoriaListener=categoriaListener;
+           /* itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    Toast.makeText(itemView.getContext(), "Clickeaste el: "+mData.get(getAdapterPosition()), Toast.LENGTH_SHORT).show();
-                    Intent intentCategoriaAMenu = new Intent(itemView.getContext(),MainActivity.class);
-                    intentCategoriaAMenu.putExtra("catSeleccionada",mData.get(getAdapterPosition()));
-
-                    itemView.getContext().startActivity(intentCategoriaAMenu);
+                   // Toast.makeText(itemView.getContext(), "Clickeaste el: "+mData.get(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                    Intent intentResultado = new Intent();
+                    intentResultado.putExtra("categoria",mData.get(getAdapterPosition()));
+                    setResult(Activity.RESULT_OK, intentResultado);
+                    finish();
                 }
-            });
+            });*/
+            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            categoriaListener.categoriaClick(getAdapterPosition());
         }
+
+
     }
 
     // convenience method for getting data at click position
@@ -84,6 +90,10 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
         void onItemClick(View view, int position);
+    }
+
+    public interface categoriaClickListener{
+        void categoriaClick(int posicion);
     }
 
 }

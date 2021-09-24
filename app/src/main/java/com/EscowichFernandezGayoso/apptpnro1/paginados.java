@@ -1,5 +1,6 @@
 package com.EscowichFernandezGayoso.apptpnro1;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,17 +11,25 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class paginados extends AppCompatActivity  {
+public class paginados extends AppCompatActivity implements CategoryViewHolder.categoriaClickListener {
 
     CategoryViewHolder adapter;
+    ArrayList<String> categorias = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paginados);
+        // set up the RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new CategoryViewHolder(this, categorias, this);
+        this.crearCategorias();
+        recyclerView.setAdapter(adapter);
 
-        // data to populate the RecyclerView with
-        ArrayList<String> categorias = new ArrayList<>();
+
+    }
+    private void crearCategorias(){
         categorias.add("Accesorios para Vehículos");
         categorias.add("Agro");
         categorias.add("Alimentos y Bebidas");
@@ -41,14 +50,14 @@ public class paginados extends AppCompatActivity  {
         categorias.add("Entradas para Eventos");
         categorias.add("Herramientas");
         categorias.add("Hogar, Muebles y Jardín");
-
-        // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new CategoryViewHolder(this, categorias);
-        recyclerView.setAdapter(adapter);
-
+        adapter.notifyDataSetChanged();
     }
-
+    @Override
+    public void categoriaClick(int posicion) {
+        Intent intentResultado = new Intent();
+        intentResultado.putExtra("categoria", categorias.get(posicion));
+        setResult(Activity.RESULT_OK, intentResultado);
+        finish();
+    }
 
 }

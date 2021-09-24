@@ -1,5 +1,6 @@
 package com.EscowichFernandezGayoso.apptpnro1;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -18,8 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView labelDescuento,textCategoria;
-    private EditText Titulo, Precio, Direccion_retiro, Email, Descripcion;
+    private TextView labelDescuento;
+    private EditText Titulo, Precio, textCategoria, Direccion_retiro, Email, Descripcion;
     private CheckBox Retiro_en_persona , Terminos_Condiciones;
     private Switch Descuento;
     private SeekBar Cantidad_descuento;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         layoutDescuento=(RelativeLayout) findViewById(R.id.layoutDescuento);
         buttonPublicar = (Button) findViewById(R.id.buttonPublicar);
         buttonCategoria = (Button) findViewById(R.id.buttonCategoria);
-
+        textCategoria=(EditText) findViewById(R.id.textCatSeleccionada);
 
 
         Descuento.setChecked(false);
@@ -82,11 +83,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intentCategoria,0);
             }
         });
-
-
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        if(resultCode== Activity.RESULT_OK){
+            if(requestCode==0){
+                String categoriaSeleccionada=data.getExtras().getString("categoria");
+                textCategoria.setText(categoriaSeleccionada);
+            }
+        }
+    }
 
     public void updateSwitchDescuento(View V){
             if(Descuento.isChecked()){
@@ -130,10 +137,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "El precio del producto debe ser mayor a 0", Toast.LENGTH_LONG).show();
             return;
         }
-        /*if(Categoria.getSelectedItem().equals(null)){
+        if(textCategoria.getText().equals("Sin Seleccionar")){
             Toast.makeText(this, "La categoria es obligatoria", Toast.LENGTH_LONG).show();
             return;
-        }*/
+        }
         if(Retiro_en_persona.isChecked()) {
             if (Direccion_retiro.getText().toString().isEmpty()) {
                 Toast.makeText(this, "La direccion de retiro es obligatoria", Toast.LENGTH_LONG).show();
@@ -154,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "El campo Titulo contiene caracteres no permitidos", Toast.LENGTH_LONG).show();
             return;
         }
-        if(!Direccion_retiro.getText().toString().matches(validador)){
+        if(!Direccion_retiro.getText().toString().matches(validador) && Retiro_en_persona.isChecked()){
             Toast.makeText(this, "El campo Dirección de retiro contiene caracteres no permitidos", Toast.LENGTH_LONG).show();
             return;
         }
