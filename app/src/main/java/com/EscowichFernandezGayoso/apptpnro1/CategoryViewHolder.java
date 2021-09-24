@@ -1,11 +1,15 @@
 package com.EscowichFernandezGayoso.apptpnro1;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -49,7 +53,16 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
         ViewHolder(View itemView) {
             super(itemView);
             myTextView = itemView.findViewById(R.id.rowName);
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Toast.makeText(itemView.getContext(), "Clickeaste el: "+mData.get(getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                    Intent intentCategoriaAMenu = new Intent(itemView.getContext(),MainActivity.class);
+                    intentCategoriaAMenu.putExtra("catSeleccionada",mData.get(getAdapterPosition()));
+
+                    itemView.getContext().startActivity(intentCategoriaAMenu);
+                }
+            });
         }
 
         @Override
@@ -72,4 +85,5 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
+
 }

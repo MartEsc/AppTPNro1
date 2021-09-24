@@ -1,6 +1,7 @@
 package com.EscowichFernandezGayoso.apptpnro1;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,25 +18,23 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView labelDescuento;
+    private TextView labelDescuento,textCategoria;
     private EditText Titulo, Precio, Direccion_retiro, Email, Descripcion;
-    private Spinner Categoria;
     private CheckBox Retiro_en_persona , Terminos_Condiciones;
     private Switch Descuento;
     private SeekBar Cantidad_descuento;
     private RelativeLayout layoutDescuento;
     private LinearLayout layoutRetiro;
-    private Button buttonPublicar,buttonPublicar1;
+    private Button buttonPublicar,buttonCategoria;
     private String emailPattern= "[a-zA-Z0-9._-]+@[a-z]{3,}+\\.+[a-z]+";
     private String validador= "[a-zA-Z0-9,. ]+";
-
+    private String categoriaSeleccionada;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Titulo=(EditText)findViewById(R.id.editTextTitulo);
         Precio=(EditText)findViewById(R.id.editTextPrecio);
-        Categoria=(Spinner)findViewById(R.id.spinnerCategoria);
         Retiro_en_persona=(CheckBox)findViewById(R.id.checkboxRetiro);
         Terminos_Condiciones =(CheckBox)findViewById(R.id.checkboxTerminos);
         layoutRetiro=(LinearLayout)findViewById(R.id.layoutRetiro);
@@ -47,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
         Descripcion=(EditText) findViewById(R.id.editTextDescripcion);
         layoutDescuento=(RelativeLayout) findViewById(R.id.layoutDescuento);
         buttonPublicar = (Button) findViewById(R.id.buttonPublicar);
-        buttonPublicar1 = (Button) findViewById(R.id.buttonPublicar1);
+        buttonCategoria = (Button) findViewById(R.id.buttonCategoria);
+
+
 
         Descuento.setChecked(false);
         layoutDescuento.setVisibility(View.GONE);
@@ -74,11 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        buttonPublicar1.setOnClickListener(new View.OnClickListener() {
+        buttonCategoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent buttonPublicar1 = new Intent(MainActivity.this, paginados.class);
-                startActivity(buttonPublicar1);
+                Intent intentCategoria = new Intent(MainActivity.this, paginados.class);
+                startActivityForResult(intentCategoria,0);
             }
         });
 
@@ -129,10 +130,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "El precio del producto debe ser mayor a 0", Toast.LENGTH_LONG).show();
             return;
         }
-        if(Categoria.getSelectedItem().equals(null)){
+        /*if(Categoria.getSelectedItem().equals(null)){
             Toast.makeText(this, "La categoria es obligatoria", Toast.LENGTH_LONG).show();
             return;
-        }
+        }*/
         if(Retiro_en_persona.isChecked()) {
             if (Direccion_retiro.getText().toString().isEmpty()) {
                 Toast.makeText(this, "La direccion de retiro es obligatoria", Toast.LENGTH_LONG).show();
